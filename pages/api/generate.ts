@@ -19,9 +19,9 @@ export default async function handler(
   console.log(process.env.OPENAI_API_KEY);
   try {
     const results = await openai.createImage({
-      prompt: "chatgpt",
-      n: 1,
-      size: "1024x1024",
+      prompt: req.body.prompt,
+      n: req.body.n,
+      size: req.body.size,
     });
 
     console.log(results.data.data[0]);
